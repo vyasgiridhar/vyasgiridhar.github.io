@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Vyas Giridharan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Projects</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog/">Blog</a>
+    <a href="resume.pdf">Resume</a>
+  </nav>
+
+  <hr>
+
+  <h2>Nyayanidhi Platform</h2>
+  <p>AI-powered legal document processing platform. Solo-built the entire backend: FastAPI,
+  async SQLAlchemy, PostgreSQL on GCP serverless. 7-phase document pipeline (500+ PDFs in
+  &lt;10 min), multi-agent contract drafting with 19 templates, LLM infrastructure with
+  prompt caching and provider abstraction.</p>
+
+  <h2>Matrix Profiling on Cerebras CS-2</h2>
+  <p>Ported the SCAMP matrix profiling algorithm to the Cerebras CS-2 Wafer-Scale Engine.
+  Benchmarked non-AI workloads on massively parallel hardware, measuring PCIe bandwidth
+  and FLOPS against GPU/CPU baselines. Tech: Cerebras CSL, Python, SLURM.</p>
+
+  <h2>Jacobi Solver on AMD EPYC Cluster</h2>
+  <p>Optimised Jacobi iterations with NUMA-aware AVX-512 intrinsics across 1000+ AMD EPYC
+  nodes. Benchmarked with MPI/OpenMP hybrid parallelism on LRZ's HPC infrastructure.
+  Tech: C++, AVX-512, MPI, OpenMP, SLURM.</p>
+
+  <h2>Reliable UDP File Transfer</h2>
+  <p>Custom reliable transport protocol built on UDP with MTU negotiation, packet-drop
+  recovery, and checksum validation. Designed for lossy networks. Tech: Rust, Tokio,
+  async I/O.</p>
+  <p><a href="https://github.com/vyasgiridhar">GitHub</a></p>
+
+  <h2>GNOME Music</h2>
+  <p>Contributed to the default music player for the GNOME desktop environment.
+  14+ commits to the upstream project covering UI features and backend improvements.</p>
+  <p><a href="https://gitlab.gnome.org/GNOME/gnome-music">GitLab</a></p>
+
+  <footer>
+    <a href="index.html">&larr; Home</a>
+  </footer>
+</body>
+</html>

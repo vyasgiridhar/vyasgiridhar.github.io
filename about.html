@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Vyas Giridharan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>About</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog/">Blog</a>
+    <a href="resume.pdf">Resume</a>
+  </nav>
+
+  <hr>
+
+  <h2>Nyayanidhi — Solo Platform Build</h2>
+  <p>I'm the entire engineering department at Nyayanidhi, a legal-tech startup building
+  AI-powered document processing for Indian law firms. Every line of backend code is mine.</p>
+
+  <p>The platform runs on FastAPI, async SQLAlchemy, and PostgreSQL, deployed on GCP Cloud Run.
+  I built a 7-phase document ingest pipeline that processes 500+ PDFs in under 10 minutes using
+  fan-in/fan-out orchestration via Cloud Workflows. Each phase is independently restartable with
+  checkpoint-based resumption.</p>
+
+  <p>The multi-agent drafting system generates contracts from 19 variant templates using
+  schema-driven LLM tool creation and multi-phase blackboard coordination. I built, evaluated,
+  and killed features when they didn't earn their complexity — including a condenser agent I
+  recognised as over-engineered and removed.</p>
+
+  <p>On the LLM infrastructure side: prompt caching for Anthropic and Gemini providers,
+  multi-modal content support, provider migration (Gemini to Sonnet for tool-use reliability),
+  and connection pool tuning that cut p95 API latency by 40%.</p>
+
+  <h2>LRZ — Supercomputing at Scale</h2>
+  <p>At the Leibniz Supercomputing Centre in Munich, I worked on HPC cluster management for
+  systems with 1000+ compute nodes connected via InfiniBand. Built automation tooling for patch
+  workflows and monitoring, profiled system performance with perf, Intel VTune, and Valgrind,
+  and integrated everything with SLURM job scheduling.</p>
+
+  <p>This was bare metal systems engineering — no cloud abstractions, no managed services.
+  NUMA topology, cache hierarchies, MPI, OpenMP. The gap between "cloud engineer" and "systems
+  engineer" is real, and I've worked on both sides.</p>
+
+  <h2>Fiserv — Scale Under Pressure</h2>
+  <p>During the COVID pandemic, I helped scale Money Network infrastructure for the US Treasury's
+  Economic Impact Program — delivering stimulus debit cards to 3 million Americans. Government
+  deadlines, zero tolerance for downtime, real consequences for failure.</p>
+
+  <p>I also rebuilt the microservices backend for Money Network's customer care system
+  (Spring Boot, supporting 2000+ programs) and re-architected the disputes platform handling
+  1M+ daily transactions.</p>
+
+  <h2>GNOME — Open Source</h2>
+  <p>Before all of this, I contributed to GNOME Music — the default music player for the GNOME
+  desktop environment. 14+ commits to the upstream project. Open source was how I learned to
+  write code that other people have to read.</p>
+
+  <h2>Education</h2>
+  <p>MSc Computer Science at TU München (coursework in HPC, parallel computing, systems
+  programming). B.Tech Computer Science from Amrita School of Engineering, Tamil Nadu.</p>
+
+  <p>I speak English, German, Tamil, Telugu, Hindi, Kannada, and Malayalam.</p>
+
+  <footer>
+    <a href="index.html">&larr; Home</a>
+  </footer>
+</body>
+</html>
