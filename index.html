@@ -4,49 +4,252 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vyas Giridharan</title>
-  <meta name="description" content="Senior Backend Engineer. AI infrastructure, distributed systems, HPC.">
+  <meta name="description" content="Senior Backend Engineer — AI infrastructure, distributed systems, HPC. 7+ years building systems that scale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Vyas Giridharan</h1>
-    <p>Senior Backend Engineer &middot; AI infrastructure, distributed systems, HPC</p>
+  <div class="wrap">
+
     <nav>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="blog/">Blog</a>
-      <a href="resume.pdf">Resume</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
     </nav>
-  </header>
 
-  <main>
-    <section>
-      <p>I build backend platforms and infrastructure. Currently a Senior Backend Engineer at
-      <a href="https://nyayanidhi.com" target="_blank" rel="noopener noreferrer">Nyayanidhi</a>, where I architected an AI-powered
-      legal document processing platform from scratch on GCP serverless.</p>
+    <header class="hero">
+      <h1>Vyas Giridharan</h1>
+      <p class="role">Senior Backend Engineer</p>
+      <p class="domains">AI infrastructure &middot; distributed systems &middot; HPC</p>
+      <p class="intro">I build systems that work under pressure, code that reads well, and delete more
+        than I write. Currently at
+        <a href="https://nyayanidhi.com" target="_blank" rel="noopener noreferrer">Nyayanidhi</a>,
+        previously at
+        <a href="https://www.lrz.de/english/" target="_blank" rel="noopener noreferrer">LRZ</a> (supercomputing),
+        <a href="https://www.fiserv.com" target="_blank" rel="noopener noreferrer">Fiserv</a> (fintech at pandemic scale),
+        and <a href="https://gnome.org" target="_blank" rel="noopener noreferrer">GNOME</a>.</p>
+      <div class="hero-links">
+        <a href="https://github.com/vyasgiridhar" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/vyasg" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:vyasgiridhar27@gmail.com">Email</a>
+      </div>
+    </header>
 
-      <p>Before that: HPC systems at <a href="https://www.lrz.de/english/" target="_blank" rel="noopener noreferrer">LRZ</a> (one of
-      Europe's top supercomputing centres), scaled fintech infrastructure at
-      <a href="https://www.fiserv.com" target="_blank" rel="noopener noreferrer">Fiserv</a> to 3 million users during the US pandemic
-      stimulus program, and contributed to <a href="https://gnome.org" target="_blank" rel="noopener noreferrer">GNOME</a>.</p>
+    <div class="metrics">
+      <div class="metric">
+        <span class="num">7+</span>
+        <span class="lbl">years</span>
+      </div>
+      <div class="metric">
+        <span class="num">3M</span>
+        <span class="lbl">users served</span>
+      </div>
+      <div class="metric">
+        <span class="num">1000+</span>
+        <span class="lbl">compute nodes</span>
+      </div>
+      <div class="metric">
+        <span class="num">40%</span>
+        <span class="lbl">p95 latency cut</span>
+      </div>
+    </div>
 
-      <p>I care about systems that work under pressure, code that reads well, and
-      deleting more than I write.</p>
-    </section>
+    <main>
 
-    <hr>
+      <section id="experience">
+        <h2>Experience</h2>
 
-    <section>
-      <p>
-        <a href="https://github.com/vyasgiridhar" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
-        <a href="https://linkedin.com/in/vyasg" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot;
-        <a href="mailto:vyasgiridhar27@gmail.com">vyasgiridhar27@gmail.com</a>
-      </p>
-    </section>
-  </main>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Nyayanidhi</h3>
+              <span class="position">Senior Backend Engineer</span>
+            </div>
+            <span class="meta">Oct 2024 &mdash; Present &middot; Chennai</span>
+          </div>
+          <ul>
+            <li>Architected AI-powered legal document processing platform on GCP serverless; defined technical standards for 4-person engineering team</li>
+            <li>Built 7-phase document ingest pipeline &mdash; fan-in/fan-out orchestration processing <strong>500+ PDFs in under 10 minutes</strong> with checkpoint-based resumption</li>
+            <li>Designed multi-agent drafting system with 19 variant templates, schema-driven LLM tool creation, and multi-phase blackboard coordination</li>
+            <li>Cut <strong>p95 API latency by 40%</strong> through connection pooling tuned for long-running LLM calls and prompt caching across Anthropic &amp; Gemini</li>
+            <li>Built collaborative editing with Y.js + Redis Pub/Sub; OAuth 2.0 / JWT auth with RBAC; OIDC-authenticated background jobs</li>
+          </ul>
+          <div class="tags">
+            <span>FastAPI</span>
+            <span>async SQLAlchemy</span>
+            <span>PostgreSQL</span>
+            <span>GCP Cloud Run</span>
+            <span>Cloud Workflows</span>
+            <span>Redis</span>
+            <span>Y.js</span>
+          </div>
+        </article>
 
-  <footer>
-    <p>Chennai, India</p>
-  </footer>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Leibniz Supercomputing Centre</h3>
+              <span class="position">HPC Systems Engineer</span>
+            </div>
+            <span class="meta">Nov 2021 &mdash; Sep 2024 &middot; Munich</span>
+          </div>
+          <ul>
+            <li>Built automation tooling and monitoring for <strong>1000+ compute nodes</strong> connected via InfiniBand at Europe's premier supercomputing facility</li>
+            <li>Profiled system performance at the hardware level &mdash; perf, Intel VTune, Valgrind</li>
+            <li>Infrastructure team for SuperMUC-NG (<strong>26.9 petaflops</strong>), Germany's fastest academic supercomputer</li>
+          </ul>
+          <div class="tags">
+            <span>Python</span>
+            <span>SLURM</span>
+            <span>MPI</span>
+            <span>OpenMP</span>
+            <span>InfiniBand</span>
+            <span>C++</span>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Fiserv</h3>
+              <span class="position">Application Developer</span>
+            </div>
+            <span class="meta">Jul 2019 &mdash; Mar 2021 &middot; Chennai</span>
+          </div>
+          <ul>
+            <li>Scaled Money Network infrastructure for US Treasury's Economic Impact Program &mdash; stimulus debit cards to <strong>3 million Americans</strong> during COVID</li>
+            <li>Built disputes platform processing <strong>1M+ daily transactions</strong></li>
+            <li>Rebuilt microservices backend for customer care system supporting 2000+ programs</li>
+          </ul>
+          <div class="tags">
+            <span>Spring Boot</span>
+            <span>Hibernate</span>
+            <span>REST APIs</span>
+            <span>Pivotal Cloud Foundry</span>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>UMM Digital</h3>
+              <span class="position">Backend Developer &amp; Data Engineer</span>
+            </div>
+            <span class="meta">Sep 2018 &mdash; Jul 2019 &middot; Chennai</span>
+          </div>
+          <ul>
+            <li>Built data pipeline for multi-platform customer sentiment aggregation serving <strong>1000+ enterprise clients</strong></li>
+          </ul>
+          <div class="tags">
+            <span>Python</span>
+            <span>Flask</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+          <article class="card">
+            <h3>Matrix Profiling on Cerebras CS-2</h3>
+            <p>Ported the SCAMP algorithm to the Wafer-Scale Engine. Benchmarked non-AI workloads on massively parallel hardware &mdash; measured PCIe bandwidth and FLOPS vs. GPU/CPU baselines.</p>
+            <div class="tags">
+              <span>Cerebras CSL</span>
+              <span>Python</span>
+              <span>SLURM</span>
+              <span>C++</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Jacobi Solver on AMD EPYC Cluster</h3>
+            <p>NUMA-aware AVX-512 intrinsics for Jacobi iterations. Hybrid MPI/OpenMP across 1000+ AMD EPYC nodes at the Leibniz Supercomputing Centre.</p>
+            <div class="tags">
+              <span>C++</span>
+              <span>AVX-512</span>
+              <span>MPI</span>
+              <span>OpenMP</span>
+              <span>SLURM</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Reliable UDP File Transfer</h3>
+            <p>Custom transport protocol on UDP with MTU negotiation, packet-drop recovery, and checksum validation. Designed for lossy networks.</p>
+            <div class="tags">
+              <span>Rust</span>
+              <span>Tokio</span>
+              <span>async I/O</span>
+            </div>
+            <a class="card-link" href="https://github.com/vyasgiridhar" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a>
+          </article>
+
+          <article class="card">
+            <h3>GNOME Music</h3>
+            <p>Contributor to the GNOME desktop music player. 14+ upstream commits merged into the project.</p>
+            <div class="tags">
+              <span>GNOME</span>
+              <span>Open Source</span>
+            </div>
+            <a class="card-link" href="https://gitlab.gnome.org/GNOME/gnome-music" target="_blank" rel="noopener noreferrer">GitLab &rarr;</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <article class="edu">
+          <div class="entry-head">
+            <div>
+              <h3>Technical University of Munich</h3>
+              <span class="position">MSc Computer Science</span>
+            </div>
+            <span class="meta">2021 &mdash; 2025</span>
+          </div>
+          <p>HPC, parallel computing, systems programming, machine learning. Concurrent with LRZ.</p>
+        </article>
+
+        <article class="edu">
+          <div class="entry-head">
+            <div>
+              <h3>Amrita School of Engineering</h3>
+              <span class="position">B.Tech Computer Science</span>
+            </div>
+            <span class="meta">2014 &mdash; 2018</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="languages">
+        <h2>Languages</h2>
+        <p>English &middot; German &middot; Tamil &middot; Telugu &middot; Hindi &middot; Kannada &middot; Malayalam</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <canvas id="particles"></canvas>
+      <p>Chennai, India</p>
+    </footer>
+
+  </div>
+
+  <script type="module">
+    import { initParticles } from './particles.js';
+
+    const canvas = document.getElementById('particles');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReduced) {
+      initParticles(canvas);
+    } else {
+      canvas.remove();
+    }
+  </script>
 </body>
 </html>
