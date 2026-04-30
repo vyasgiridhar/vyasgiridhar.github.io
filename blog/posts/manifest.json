@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "moleqular",
+    "title": "Fifteen kernels in two days: pushing the M4 to its limits",
+    "date": "2026-04-30",
+    "description": "ARM NEON, Metal, the Apple Neural Engine via reverse-engineered private APIs, plus CUDA and SVE2 cross-compiles. What the design space looks like when iteration collapses to minutes.",
+    "tags": ["molecular-dynamics", "m4", "hpc", "metal", "ane"],
+    "readingMinutes": 8
+  }
+]

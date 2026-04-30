@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post — Vyas Giridharan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="wrap post-wrap">
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">All posts</a>
+      <a href="/#experience">Experience</a>
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+
+    <article class="post-article">
+      <header class="post-header" id="post-header">
+        <h1 class="post-title" id="post-title">Loading…</h1>
+        <p class="post-meta" id="post-meta"></p>
+      </header>
+      <div class="post-body" id="post-body"></div>
+      <div class="post-footer">
+        <a href="/blog/">← back to blog</a>
+      </div>
+    </article>
+
+    <footer>
+      <p>Chennai, India</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+  <script>
+    const MONTHS_LONG = ['January','February','March','April','May','June',
+                         'July','August','September','October','November','December'];
+
+    function formatLongDate(iso) {
+      const [y, m, d] = iso.split('-').map(Number);
+      return `${MONTHS_LONG[m - 1]} ${d}, ${y}`;
+    }
+
+    function getSlug() {
+      return new URLSearchParams(window.location.search).get('slug');
+    }
+
+    function fail(msg) {
+      document.getElementById('post-title').textContent = 'Post not found';
+      document.getElementById('post-meta').textContent = '';
+      document.getElementById('post-body').innerHTML =
+        `<p>${msg} <a href="/blog/">Back to blog →</a></p>`;
+      document.title = 'Not found — Vyas Giridharan';
+    }
+
+    async function load() {
+      const slug = getSlug();
+      if (!slug) {
+        fail('No slug specified.');
+        return;
+      }
+
+      let manifest, md;
+      try {
+        const [manifestRes, mdRes] = await Promise.all([
+          fetch('posts/manifest.json'),
+          fetch(`posts/${slug}.md`)
+        ]);
+        if (!manifestRes.ok) throw new Error('manifest fetch failed');
+        if (!mdRes.ok) throw new Error(`post "${slug}" not found`);
+        manifest = await manifestRes.json();
+        md = await mdRes.text();
+      } catch (err) {
+        fail(err.message);
+        return;
+      }
+
+      const meta = manifest.find(p => p.slug === slug);
+      if (!meta) {
+        fail(`No manifest entry for "${slug}".`);
+        return;
+      }
+
+      // Header
+      document.title = `${meta.title} — Vyas Giridharan`;
+      document.getElementById('post-title').textContent = meta.title;
+      const tags = (meta.tags || []).join(', ');
+      const metaParts = [
+        formatLongDate(meta.date),
+        meta.readingMinutes ? `${meta.readingMinutes} min` : null,
+        tags || null
+      ].filter(Boolean);
+      document.getElementById('post-meta').textContent = metaParts.join(' · ');
+
+      // Render markdown
+      marked.setOptions({ gfm: true, breaks: false });
+      document.getElementById('post-body').innerHTML = marked.parse(md);
+
+      // Syntax highlight
+      document.querySelectorAll('#post-body pre code').forEach(el => {
+        try { hljs.highlightElement(el); } catch (e) { /* no language class — skip */ }
+      });
+    }
+
+    load();
+  </script>
+</body>
+</html>
