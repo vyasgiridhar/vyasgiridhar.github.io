@@ -32,8 +32,21 @@
   --sp-2xl: 96px;
 }
 
+:root[data-theme="light"] {
+  --bg: #fafaf9;
+  --bg-surface: #ffffff;
+  --text: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #a8a29e;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-dim: rgba(13, 148, 136, 0.06);
+  --border: #e7e5e4;
+  --border-hover: #d6d3d1;
+}
+
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #fafaf9;
     --bg-surface: #ffffff;
     --text: #1c1917;
@@ -125,6 +138,31 @@ nav a {
 
 nav a:hover {
   color: var(--accent);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+:root[data-theme="dark"] .theme-label-dark { display: none; }
+:root[data-theme="light"] .theme-label-light { display: none; }
+:root:not([data-theme]) .theme-label-dark { display: none; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .theme-label-dark { display: inline; }
+  :root:not([data-theme]) .theme-label-light { display: none; }
 }
 
 /* ---- Hero ---- */
